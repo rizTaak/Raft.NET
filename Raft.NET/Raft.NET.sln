@@ -3,13 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raft.Common", "..\Raft.Common\Raft.Common.csproj", "{BB362D83-DE40-4CEF-B278-1040C5FCE402}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raft.Common", "Raft.Common\Raft.Common.csproj", "{BB362D83-DE40-4CEF-B278-1040C5FCE402}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raft.Client", "Raft.Client\Raft.Client.csproj", "{1F8A5A65-CB98-42F2-B717-2212380D447E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Raft.Server", "Raft.Server\Raft.Server.csproj", "{ABC970D4-5283-4C09-8BF7-8535BBBB9ABB}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{F9961C85-4FFD-4EA8-8BB6-C9E5D376343D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
