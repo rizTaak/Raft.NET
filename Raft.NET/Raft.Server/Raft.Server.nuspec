@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>http://www.apache.org/licenses/LICENSE-2.0</licenseUrl>
+    <projectUrl>https://github.com/rizTaak/Raft.NET</projectUrl>
+    <iconUrl>https://github.com/rizTaak/Raft.NET</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>Initial Setup.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>Raft Raft.NET</tags>
+  </metadata>
+  <files>
+	<file src="bin\net45\Release\Raft.Common.dll" target="lib\net45" /> 
+	<file src="bin\net45\Release\Raft.*.pdb" target="lib\net45" /> 
+  </files>
+</package>

@@ -1,0 +1,1 @@
+nuget pack Raft.Server.csproj -Prop Configuration=ReleaseNet45
