@@ -10,6 +10,7 @@
     <RootNamespace>Raft.Client</RootNamespace>
     <AssemblyName>Raft.Client</AssemblyName>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugNet45|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -59,6 +60,10 @@
     <ProjectReference Include="..\Raft.Common\Raft.Common.csproj">
       <Project>{bb362d83-de40-4cef-b278-1040c5fce402}</Project>
       <Name>Raft.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Raft.Messages\Raft.Messages.csproj">
+      <Project>{de81db3a-21cd-4f14-b583-897216ef0d4e}</Project>
+      <Name>Raft.Messages</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

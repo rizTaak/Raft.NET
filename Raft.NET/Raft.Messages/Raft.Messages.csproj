@@ -4,13 +4,13 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">DebugNet45</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ABC970D4-5283-4C09-8BF7-8535BBBB9ABB}</ProjectGuid>
+    <ProjectGuid>{DE81DB3A-21CD-4F14-B583-897216EF0D4E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Raft.Server</RootNamespace>
-    <AssemblyName>Raft.Server</AssemblyName>
-    <FileAlignment>512</FileAlignment>
+    <RootNamespace>Raft.Messages</RootNamespace>
+    <AssemblyName>Raft.Messages</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'DebugNet45|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -19,8 +19,8 @@
     <OutputPath>bin\net45\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'ReleaseNet45|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,12 +28,12 @@
     <OutputPath>bin\net45\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
-      <HintPath>..\packages\NLog.4.3.10\lib\net45\NLog.dll</HintPath>
+    <Reference Include="Google.Protobuf, Version=3.1.0.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Protobuf.3.1.0\lib\net45\Google.Protobuf.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -49,22 +49,17 @@
     <Compile Include="..\GlobalAssemblyVersion.cs">
       <Link>GlobalAssemblyVersion.cs</Link>
     </Compile>
+    <Compile Include="Messages.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Messages.proto" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Raft.Common\Raft.Common.csproj">
-      <Project>{bb362d83-de40-4cef-b278-1040c5fce402}</Project>
-      <Name>Raft.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Raft.Messages\Raft.Messages.csproj">
-      <Project>{de81db3a-21cd-4f14-b583-897216ef0d4e}</Project>
-      <Name>Raft.Messages</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>$(SolutionDir)packages\Google.Protobuf.Tools.3.1.0\tools\windows_x64\protoc.exe --csharp_out=$(ProjectDir) -I=$(ProjectDir) $(ProjectDir)Messages.proto</PreBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
