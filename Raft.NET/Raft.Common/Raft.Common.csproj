@@ -40,6 +40,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,8 +52,12 @@
     <Compile Include="..\GlobalAssemblyVersion.cs">
       <Link>GlobalAssemblyVersion.cs</Link>
     </Compile>
+    <Compile Include="Pools\BufferPool.cs" />
     <Compile Include="Collections\BlockingBucketQueue.cs" />
     <Compile Include="Collections\IBlockingBucketQueue.cs" />
+    <Compile Include="Pools\IBufferPool.cs" />
+    <Compile Include="Pools\IObjectPool.cs" />
+    <Compile Include="Pools\StackObjectPool.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

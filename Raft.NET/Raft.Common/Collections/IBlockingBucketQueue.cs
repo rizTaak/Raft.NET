@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ServiceModel.Channels;
 
 namespace Raft.Common.Collections
 {
